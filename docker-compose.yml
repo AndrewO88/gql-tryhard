@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  db1:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB1_POSTGRES_DB}
+      POSTGRES_USER: ${DB1_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${DB1_POSTGRES_PASSWORD}
+  db2:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB2_POSTGRES_DB}
+      POSTGRES_USER: ${DB2_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${DB2_POSTGRES_PASSWORD}
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+  rest-api1:
+    build: ./api/go
+    restart: always
+
+  #ToDo(lihih) need to implement
+  #rest-api2:
+  #bff-gate:
+  #client1: (react-app)
+  #client2: (angular-app)

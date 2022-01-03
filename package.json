@@ -1,0 +1,13 @@
+{
+  "name": "gql-tryhard",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose --env-file ./.env up",
+    "start:dev": "docker-compose --env-file ./.env.dev up",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
